@@ -22,8 +22,7 @@
 /* =========================================
    BASE (ESTILOS PARA MÓVIL POR DEFECTO)
    ========================================= */
-/* Metodología Mobile First: Aquí van los estilos para pantallas pequeñas */
-
+/* Metodología Mobile First */
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-secundario);
@@ -39,71 +38,46 @@ h1, h2, h3 {
   text-align: center;
 }
 
-h1 { font-size: 1.8rem; } /* Tamaño base móvil */
+h1 { font-size: 1.8rem; }
 h2 { color: var(--color-acento); margin-top: 20px; }
 
 /* =========================================
-   HEADER + NAV (MÓVIL)
+   ESTILOS ADAPTADOS PARA EL NAVBAR BOOTSTRAP
    ========================================= */
-header {
-  background-color: var(--color-primario);
-  display: flex;
-  flex-direction: column; /* Columna en móvil */
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  gap: 12px;
-  text-align: center;
-}
-
+/* Mantenemos tu efecto de hover en el logo */
 .logo-header {
-  width: 100px;
-  height: auto;
   transition: transform 0.3s ease;
 }
-
 .logo-header:hover {
   transform: scale(1.1);
 }
 
-header h1 {
-  font-size: 1.2rem;
-  color: var(--color-blanco);
-  margin: 6px 0 0 0;
-  white-space: normal;
+/* Forzamos el color naranja de tu marca en el Navbar de Bootstrap */
+.navbar {
+  background-color: var(--color-primario) !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
-nav ul {
-  display: flex;
-  flex-direction: column; /* Lista vertical en móvil */
-  gap: 10px;
-  list-style: none;
-  padding-bottom: 10px;
-  width: 100%;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--color-blanco);
+.navbar-brand strong, .nav-link {
+  color: var(--color-blanco) !important;
   font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  display: block; /* Botón bloque completo en móvil */
-  width: 100%;
-  text-align: center;
 }
-
-nav a:hover {
+.nav-link:hover {
   background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+/* Icono de menú hamburguesa en color blanco */
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.5) !important;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* =========================================
    MAIN / SECTIONS
    ========================================= */
 main {
-  width: 96%; /* Ancho amplio en móvil */
+  width: 96%;
   max-width: 1000px;
   margin: 12px auto;
   padding: 12px;
@@ -135,7 +109,7 @@ section {
 
 .menu-list li {
   display: flex;
-  flex-direction: column; /* Vertical en móvil */
+  flex-direction: column;
   align-items: flex-start;
   gap: 10px;
   border-bottom: 1px dotted #ccc;
@@ -167,10 +141,8 @@ footer {
 /* =========================================
    GALERÍA GRID (BASE MÓVIL: 1 COLUMNA)
    ========================================= */
-/* Cumple con 4.1, 4.2 y 4.3 */
 .contenedor-padre {
   display: grid;
-  /* Configuración para móvil (1 sola columna) */
   grid-template-areas:
     "titulo"
     "imgti"
@@ -181,8 +153,7 @@ footer {
     "imgtp"
     "imgtl";
   grid-template-columns: 1fr;
-  grid-template-rows: auto repeat(6, 220px); /* Ajuste automático de filas */
-  
+  grid-template-rows: auto repeat(6, 220px);
   gap: 10px;
   justify-content: center;
   background-color: var(--color-blanco);
@@ -198,7 +169,6 @@ footer {
   border-radius: 10px;
 }
 
-/* Asignación de áreas (grid-area) */
 .Titulogal { grid-area: titulo; text-align: center; margin-bottom: 10px; }
 .img1 { grid-area: imgti; }
 .img2 { grid-area: imgtu; }
@@ -213,39 +183,9 @@ footer {
    MEDIA QUERIES (MIN-WIDTH) -> PARA TABLETS Y DESKTOP
    ========================================================================== */
 
-/* 1. TABLETS (A partir de 521px) */
 @media (min-width: 521px) {
   h1 { font-size: 2.2rem; }
   
-  header {
-    flex-direction: row; /* Cambia a fila */
-    justify-content: space-between; /* Espaciado original */
-    padding: 10px 20px;
-    text-align: left;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-    margin-left: 10px;
-    margin-right: auto;
-    margin-top: 0;
-    white-space: nowrap;
-  }
-
-  nav ul {
-    flex-direction: row; /* Menú horizontal */
-    width: auto;
-    gap: 20px;
-    padding-bottom: 0;
-    justify-content: center;
-    flex-wrap: wrap; 
-  }
-
-  nav a {
-    width: auto; /* Ancho automático */
-    display: inline-block;
-  }
-
   main {
     width: 94%;
     padding: 16px;
@@ -255,14 +195,12 @@ footer {
     padding: 18px;
   }
   
-  /* Menú lista: recupera formato fila */
   .menu-list li {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  /* Galería Grid: Transformación a 2 columnas */
   .contenedor-padre {
     padding: 20px;
     grid-template-areas:
@@ -276,7 +214,6 @@ footer {
   }
 }
 
-/* 2. DESKTOP (A partir de 900px) */
 @media (min-width: 900px) {
   main {
     width: 90%;
@@ -287,7 +224,6 @@ footer {
     padding: 25px;
   }
 
-  /* Galería Grid: Transformación completa a 3 columnas */
   .contenedor-padre {
     grid-template-areas:
       "titulo titulo titulo"
