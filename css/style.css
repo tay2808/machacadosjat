@@ -1,0 +1,300 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+:root {
+  --color-primario: #FF9800;
+  --color-secundario: #FFFDE7;
+  --color-texto: #333333;
+  --color-blanco: #ffffff;
+  --color-acento: #D84315;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   BASE (ESTILOS PARA MÓVIL POR DEFECTO)
+   ========================================= */
+/* Metodología Mobile First: Aquí van los estilos para pantallas pequeñas */
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+h1 { font-size: 1.8rem; } /* Tamaño base móvil */
+h2 { color: var(--color-acento); margin-top: 20px; }
+
+/* =========================================
+   HEADER + NAV (MÓVIL)
+   ========================================= */
+header {
+  background-color: var(--color-primario);
+  display: flex;
+  flex-direction: column; /* Columna en móvil */
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  gap: 12px;
+  text-align: center;
+}
+
+.logo-header {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-header:hover {
+  transform: scale(1.1);
+}
+
+header h1 {
+  font-size: 1.2rem;
+  color: var(--color-blanco);
+  margin: 6px 0 0 0;
+  white-space: normal;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column; /* Lista vertical en móvil */
+  gap: 10px;
+  list-style: none;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: block; /* Botón bloque completo en móvil */
+  width: 100%;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   MAIN / SECTIONS
+   ========================================= */
+main {
+  width: 96%; /* Ancho amplio en móvil */
+  max-width: 1000px;
+  margin: 12px auto;
+  padding: 12px;
+  background-color: transparent;
+}
+
+section {
+  background-color: var(--color-blanco);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.imagen-contenido {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+/* =========================================
+   MENÚ (LISTA DE PRECIOS)
+   ========================================= */
+.menu-list {
+  list-style: none;
+}
+
+.menu-list li {
+  display: flex;
+  flex-direction: column; /* Vertical en móvil */
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom: 1px dotted #ccc;
+  padding: 10px 0;
+}
+
+.menu-list li strong {
+  color: var(--color-acento);
+}
+
+.menu-list li span {
+  font-weight: bold;
+  background-color: var(--color-secundario);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  background-color: #B3E5FC;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  border-top: 4px solid var(--color-primario);
+}
+
+/* =========================================
+   GALERÍA GRID (BASE MÓVIL: 1 COLUMNA)
+   ========================================= */
+/* Cumple con 4.1, 4.2 y 4.3 */
+.contenedor-padre {
+  display: grid;
+  /* Configuración para móvil (1 sola columna) */
+  grid-template-areas:
+    "titulo"
+    "imgti"
+    "imgtu"
+    "imgty"
+    "imgtt"
+    "imgto"
+    "imgtp"
+    "imgtl";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto repeat(6, 220px); /* Ajuste automático de filas */
+  
+  gap: 10px;
+  justify-content: center;
+  background-color: var(--color-blanco);
+  border-radius: 10px;
+  padding: 14px;
+  border: #333333 2px solid;
+}
+
+.contenedor-padre img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Asignación de áreas (grid-area) */
+.Titulogal { grid-area: titulo; text-align: center; margin-bottom: 10px; }
+.img1 { grid-area: imgti; }
+.img2 { grid-area: imgtu; }
+.img3 { grid-area: imgty; }
+.img4 { grid-area: imgto; }
+.img5 { grid-area: imgtp; }
+.img6 { grid-area: imgtl; }
+.img7 { grid-area: imgtt; }
+
+
+/* ==========================================================================
+   MEDIA QUERIES (MIN-WIDTH) -> PARA TABLETS Y DESKTOP
+   ========================================================================== */
+
+/* 1. TABLETS (A partir de 521px) */
+@media (min-width: 521px) {
+  h1 { font-size: 2.2rem; }
+  
+  header {
+    flex-direction: row; /* Cambia a fila */
+    justify-content: space-between; /* Espaciado original */
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+
+  nav ul {
+    flex-direction: row; /* Menú horizontal */
+    width: auto;
+    gap: 20px;
+    padding-bottom: 0;
+    justify-content: center;
+    flex-wrap: wrap; 
+  }
+
+  nav a {
+    width: auto; /* Ancho automático */
+    display: inline-block;
+  }
+
+  main {
+    width: 94%;
+    padding: 16px;
+  }
+
+  section {
+    padding: 18px;
+  }
+  
+  /* Menú lista: recupera formato fila */
+  .menu-list li {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Galería Grid: Transformación a 2 columnas */
+  .contenedor-padre {
+    padding: 20px;
+    grid-template-areas:
+      "titulo titulo"
+      "imgti imgtu"
+      "imgty imgtt"
+      "imgto imgtp"
+      "imgtl imgtl";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(4, 220px);
+  }
+}
+
+/* 2. DESKTOP (A partir de 900px) */
+@media (min-width: 900px) {
+  main {
+    width: 90%;
+    padding: 20px;
+  }
+
+  section {
+    padding: 25px;
+  }
+
+  /* Galería Grid: Transformación completa a 3 columnas */
+  .contenedor-padre {
+    grid-template-areas:
+      "titulo titulo titulo"
+      "imgti imgtu imgty"
+      "imgti imgtu imgtt"
+      "imgto imgtp imgtl";
+    grid-template-columns: 34% 33% 33%;
+    grid-template-rows: auto repeat(3, 200px);
+  }
+}
