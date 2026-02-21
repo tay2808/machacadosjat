@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machacados JAT - Galeria</title>
+    
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-        <header>
-        <img class="logo-header" src="../img/logo.png" alt="logo machacados JAT">
-        <h1>Machacados JAT</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="./menu.html">Menú</a></li>
-                    <li><a href="./sucursal.html">Sucursal</a></li>
-                    <li><a href="./carrito.html">Carrito</a></li>
-                    <li><a href="./contacto.html">Contacto</a></li>
-                    <li><a href="#">Galeria</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="contenedor-padre">
-            <h2 class="Titulogal">Galeria</h2>
-            <img class="img1" src="https://i.postimg.cc/9My6RD0d/741bbe39-0d82-4490-905a-780db6cd6ffb.jpg" alt="Imagen de galería 1">
-            <img class="img2" src="https://i.postimg.cc/HxT2zn3L/f997be06-ba88-4db2-8888-065e0f5169c7.jpg" alt="Imagen de galería 2">
-            <img class="img3" src="https://i.postimg.cc/jjbQq2py/cbd2a46b-53a1-4f23-b143-9269bf0a9a59.jpg" alt="Imagen de galería 3">
-            <img class="img4" src="https://i.postimg.cc/rs0tNL6C/Whats-App-Image-2026-01-31-at-9-37-55-AM.jpg" alt="Imagen de galería 4">
-            <img class="img5" src="https://i.postimg.cc/SsjXmpxB/019d3fd7-8e04-499a-a830-b9ae97e6e6b4.jpg" alt="Imagen de galería 5">
-            <img class="img6" src="https://i.postimg.cc/rsr9jP7V/a6c1a735-5c98-445b-8235-dd1754700199.jpg" alt="Imagen de galería 6">
-            <img class="img7"src="https://i.postimg.cc/y8qbMFTj/3715d0eb-972d-4c72-95a0-7aae8c75fbf5.jpg" alt="Imagen de galería 7">
-        </main>
-        <footer>
-            <p>&copy; 2023 Machacados JAT. Todos los derechos reservados.</p>
-        </footer>
+    <!-- NAVBAR OFFCANVAS -->
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                    <img class="logo-header me-2" src="../img/logo.png" alt="logo machacados JAT" width="50">
+                    <strong>Machacados JAT</strong>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./menu.html">Menú</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./sucursal.html">Sucursal</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./carrito.html">Carrito</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Galeria</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor-padre">
+        <h2 class="Titulogal">Galeria</h2>
+        <img class="img1" src="https://i.postimg.cc/9My6RD0d/741bbe39-0d82-4490-905a-780db6cd6ffb.jpg" alt="Imagen de galería 1">
+        <img class="img2" src="https://i.postimg.cc/HxT2zn3L/f997be06-ba88-4db2-8888-065e0f5169c7.jpg" alt="Imagen de galería 2">
+        <img class="img3" src="https://i.postimg.cc/jjbQq2py/cbd2a46b-53a1-4f23-b143-9269bf0a9a59.jpg" alt="Imagen de galería 3">
+        <img class="img4" src="https://i.postimg.cc/rs0tNL6C/Whats-App-Image-2026-01-31-at-9-37-55-AM.jpg" alt="Imagen de galería 4">
+        <img class="img5" src="https://i.postimg.cc/SsjXmpxB/019d3fd7-8e04-499a-a830-b9ae97e6e6b4.jpg" alt="Imagen de galería 5">
+        <img class="img6" src="https://i.postimg.cc/rsr9jP7V/a6c1a735-5c98-445b-8235-dd1754700199.jpg" alt="Imagen de galería 6">
+        <img class="img7" src="https://i.postimg.cc/y8qbMFTj/3715d0eb-972d-4c72-95a0-7aae8c75fbf5.jpg" alt="Imagen de galería 7">
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Machacados JAT. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap 5.3.8 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

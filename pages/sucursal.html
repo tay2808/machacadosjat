@@ -5,22 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machacados JAT - Sucursal</title>
+    
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+    <!-- NAVBAR OFFCANVAS -->
     <header>
-        <img class="logo-header" src="../img/logo.png" alt="logo machacados JAT">
-        <h1>Machacados JAT</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./menu.html">Menú</a></li>
-                <li><a href="#">Sucursal</a></li>
-                <li><a href="./carrito.html">Carrito</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./galeria.html">Galeria</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                    <img class="logo-header me-2" src="../img/logo.png" alt="logo machacados JAT" width="50">
+                    <strong>Machacados JAT</strong>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./menu.html">Menú</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Sucursal</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./carrito.html">Carrito</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./galeria.html">Galeria</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -32,7 +55,6 @@
             <h3>Un espacio para disfrutar</h3>
             <p>Nuestra sucursal es la cafeteria el rinconcito</p>
         </section>
-
 
         <!-- Sección de Mapa -->
         <section>
@@ -49,6 +71,8 @@
     <footer>
         <p>&copy; 2023 Machacados JAT. Todos los derechos reservados.</p>
     </footer>
-</body>
 
+    <!-- Bootstrap 5.3.8 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
 </html>
